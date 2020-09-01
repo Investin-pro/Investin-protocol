@@ -1,1 +1,1 @@
-# Investin-Coin
+# Investin-token

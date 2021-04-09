@@ -9,8 +9,8 @@ import "https://github.com/aak-capital/openzeppelin-contracts/blob/master/contra
 // Investintoken with Governance.
 contract Investintoken is ERC20("Investintoken", "IVN"), Ownable {
     /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (MasterChef).
-    function mint() public onlyOwner {
-        require(totalSupply()==0, "mint: Only Initial Mint Allowed");
+    
+    constructor() public {
         _mint(owner(), 9e24);
         _moveDelegates(address(0), _delegates[owner()], 9e24);
     }

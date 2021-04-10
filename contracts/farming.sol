@@ -262,6 +262,7 @@ contract Farm is Ownable {
         paidOut += _amount;
     }
     
+    //to burn tokens incase they are left on contract after farm ends.
     function burnRemainingTokens() external { 
         require(block.number >= endBlock, "Can't burn yet"); // Can only burn after 3 months(= 972000 blocks)
         iIVN(address(erc20)).burn(erc20.balanceOf(address(this)));
